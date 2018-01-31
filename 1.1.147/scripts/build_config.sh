@@ -12,7 +12,7 @@ do
         if egrep -q "(^|^#)$eureka_name=" $CONFIG_FILE; then
             sed -r -i "s@(^|^#)($eureka_name)=(.*)@\2=${!env_var}@g" $CONFIG_FILE #note that no config values may contain an '@' char
         else
-            echo "$eureka_name=${!env_var}" >> $CONFIG_FILE
+            echo "\n$eureka_name=${!env_var}" >> $CONFIG_FILE
         fi
     fi
 done
