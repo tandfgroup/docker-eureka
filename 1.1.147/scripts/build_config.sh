@@ -4,10 +4,10 @@ CONFIG_FILE="$1"
 
 for VAR in `env`
 do
-    if [[ $VAR =~ ^EUREKA_ ]]; then
+    if [[ $VAR =~ ^eureka_ ]]; then
         echo -e "\n" >> $CONFIG_FILE
         echo $VAR
-        eureka_name=`echo "$VAR" | sed -r "s/(.*)=.*/\1/g" | tr '[:upper:]' '[:lower:]' | tr _ . | tr 0 - `
+        eureka_name=`echo "$VAR" | sed -r "s/(.*)=.*/\1/g" | tr _ . | tr 0 - `
         echo $eureka_name
         env_var=`echo "$VAR" | sed -r "s/(.*)=.*/\1/g"`
         if egrep -q "(^|^#)$eureka_name=" $CONFIG_FILE; then
