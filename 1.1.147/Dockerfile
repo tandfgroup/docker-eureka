@@ -4,4 +4,6 @@ ADD config.properties /tomcat/webapps/eureka/WEB-INF/classes/config.properties
 
 COPY scripts/* scripts/
 
+RUN chmod 777 -R scripts/
+
 ENTRYPOINT ["/scripts/start.sh"]
