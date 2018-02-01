@@ -1,8 +1,8 @@
 FROM netflixoss/eureka:1.1.147
 
 ADD config.properties /tomcat/webapps/eureka/WEB-INF/classes/config.properties
-ADD eureka-client-dev.properties /tomcat/webapps/eureka/WEB-INF/classes/eureka-client-dev.properties
-ADD eureka-client-dev.properties /tomcat/webapps/eureka/WEB-INF/classes/eureka-client.properties
+ADD config/eureka-client-dev.properties /tomcat/webapps/eureka/WEB-INF/classes/eureka-client-dev.properties
+ADD config/eureka-server.properties /tomcat/webapps/eureka/WEB-INF/classes/eureka-server.properties
 
 COPY scripts/* scripts/
 
